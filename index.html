@@ -1,0 +1,182 @@
+
+<!DOCTYPE>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Parth Desai</title>
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="img/favicon-fighter-jet.ico">
+		
+		<link rel="stylesheet" href="styles/Skeleton-2.0.4/css/skeleton.css">
+		<link rel="stylesheet" href="styles/Skeleton-2.0.4/css/normalize.css"> 
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel = "stylesheet" href = "fonts/octicons/octicons.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		
+		<!-- Smooth Scrolling Script -->
+		<script src="js/smooth-scroll-master/smooth-scroll-master/js/smooth-scroll.js"> </script>
+		<!-- Jquerry -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		
+			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="http://w3schools.com/w3css/w3full.css">
+
+		<link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+		<!--
+			<script type="text/javascript" src="//octicons.github.com/js/jquery-1.11.0.min.js"></script>
+			<script type="text/javascript" src="//octicons.github.com/js/ZeroClipboard.min.js"></script>
+			<script type="text/javascript" src="//octicons.github.com/js/application.js"></script>
+		-->	
+		<!-- Font-Awesome-->
+		<link rel="stylesheet" href="fonts/font-awesome-4.3.0/font-awesome-4.3.0/css/font-awesome.css">
+		<link rel="stylesheet" href="http://w3schools.com/w3css/w3full.css">
+
+		<script>
+			$(document).ready(function(e) {
+				$('.with-hover-text, .regular-link').click(function(e){
+					e.stopPropagation();
+					});
+					
+				/***************
+				* = Hover text *
+				* Hover text for the last slide
+				***************/
+				$('.with-hover-text').hover(
+					function(e) {
+						$(this).css('overflow', 'visible');
+						$(this).find('.hover-text')
+							.show()
+							.css('opacity', 0)
+							.delay(200)
+							.animate(
+								{
+									paddingTop: '25px',
+									opacity: 1
+								},
+								'fast',
+								'linear'
+							);
+					},
+					function(e) {
+						var obj = $(this);
+						$(this).find('.hover-text')
+							.animate(
+								{
+									paddingTop: '0',
+									opacity: 0
+								},
+								'fast',
+								'linear',
+								function() {
+									$(this).hide();
+									$( obj ).css('overflow', 'hidden');
+								}
+							);
+					}
+				);
+			});
+			
+				$(function () {
+						createChart();  
+
+						$("#overlay1").click(function(){
+						   //var chart = $container.highcharts();    
+						   //chart.redraw();
+							 createChart();  
+						});
+				});
+				
+			
+		</script>
+		<script src="js/wow.min.js"></script>
+		<link rel="stylesheet" href="styles/animate.css">
+		<script>
+		 new WOW().init();
+		</script>
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+		<!-- Original CSS --->
+		<link rel="stylesheet" type="text/css" href="styles/index.css">
+		
+		<style>
+			body {
+				font-family: Ubuntu, sans-serif; 
+				margin-top: 90px;
+				background-image: url("img/hedge-footer1.jpg");
+				background-position: bottom;
+			    background-repeat: no-repeat;
+				background-size: 850px 300px;
+				
+			}
+			
+		</style>
+
+	</head>
+	<body>
+
+		<section id="about">
+		</br></br>
+		</br>
+			<div class="container">
+				<div class = "row">
+					<div class = "col-md-5 img-and-social">
+						<img src = "img/profile_pic.jpg" class="img-circle" width="350" height="350">
+					</div>
+					<div class = "col-md-7"> 
+						<h3>Welcome!</h3>
+						<p>Hi! name is Parth Desai</p>
+						<p>I am a rising junior from the University of Maryland, I am studying computer science while minor-ing in computer science. I plan on graduating in Dec 2016</p>
+						<p>I am generally focus on web development but I also have a strong focus in software development specifically in Java, Ruby and C!
+						</p>
+						<p> I have interned/worked at many cool places, currently I work at Hughes telecommunication</p> 
+						<p>This is my temporary site while I work on the main one! Feel free to check out my <b><a href ="https://www.github.com/UMDHackers">Projects</a></b>, <b><a href ="etc/Resume_Parth_Desai_2015_1.pdf">Resume</a></b> or feel free to contact me! Or better hire me!</p>
+					</div>
+				</div>
+				
+					</br>
+					<div class = "wow fadeInUp">
+					<div class="btn-group2 contact-row-4">
+						<div class = "col-12 col-sm-2 with-hover-text">
+							<p><a href = "https://www.github.com/UMDHackers" target="_blank"><i class="fa fa-github"></i></a></p>
+							<span class="hover-text">UMDHackers</span></a>
+						</div>
+						
+						<div class = "col-12 col-sm-2 with-hover-text">
+							<p><a href = "https://www.facebook.com/parth.desai.5" target="_blank"><i class="fa fa-facebook-square"></i></a></p>
+							<span class="hover-text">add me!</span></a>
+						</div>
+						
+						<div class = "col-12 col-sm-2 with-hover-text">
+							<p><a href = "https://twitter.com/Parth5Desai" target="_blank"><i class="fa fa-twitter"></i></a></p>
+							<span class="hover-text">@Parth5Desai</span></a>
+						</div>
+						
+						<div class = "col-12 col-sm-2 with-hover-text">
+							<p><a href = "https://www.linkedin.com/in/ParthDeasi" target="_blank"><i class="fa fa-linkedin-square"></i></a></p>
+							<span class="hover-text">link me!</span></a>
+						</div>
+						
+						<div class = "col-12 col-sm-2 with-hover-text">
+							<p><a href = "mailto:parthdesai95@gmail.com"><i class="fa fa-envelope"></i></a></p>
+							<span class="hover-text">parthdesai95@gmail.com</span></a>
+						</div>		
+						<div class = "col-12 col-sm-2 with-hover-text">
+							<p><a href = "#"><i class="fa fa-phone"></i></a></p>
+							<span class="hover-text">240-422-2761</span></a>
+						</div>
+					</div>
+				</div>
+				
+			</div>	
+			
+		</section>
+
+	</body>
+</html>

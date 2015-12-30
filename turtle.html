@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title> Turtle shell </title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<style>	
+		body {
+			font-family: "Courier New";
+			background-color: #cbf8c1;
+			overflow: hidden;
+		}
+		body h1 {
+			font-family: "Arial";
+			text-align: center;
+			padding-bottom: 120px;
+			padding-right: 50px;
+		}
+		.rig {
+			position: absolute;
+		}
+		.lef {
+			margin: 0 0 0 15%;
+			position: absolute;
+		}
+
+		textarea {
+			resize: none;
+		}
+		input {
+			
+			width: 250px;
+		}
+		label {
+			padding-top: 15px;
+		}
+		
+	</style>
+	<script>
+		var color = "black";
+		var set_of_color = {"black":true, "blue":true, "green":true, "red":true, "purple":true, "yellow":true};
+		var size = 1;
+		var x1 = 0, y1 = 0, x2 = 0, y2 = 0;		
+		
+		
+		function get(cmd) {
+			if(event.keyCode == 13) {
+				//alert(cmd.value);
+
+				var c = document.getElementById("myCanvas");
+				var	ctx = c.getContext("2d");
+				var command = cmd.value.trim();
+				var textarea = document.getElementById("log");
+				textarea.value += "turtle> " + command + "\n";
+				document.getElementById("shell").value = "";
+				var command_array = command.split(" ");
+				if (command == "help") {
+					textarea.value += "thickness '(+|-)num' - line thickness would go up or down by number\n\ncircle 'radius' -  circle of a certian radius will be picked\n\ncolor 'color' -  color of the line\n\nforward 'steps' -  move to the right steps worth\n\nhelp -  this page\n\nup 'steps' -  move up steps worth\n\ndown 'steps' -  move down steps worth\n\nback 'steps' - move back steps worth\n";
+				}
+				else if (command == "") {
+					
+				}
+				else if (command == "clear") {
+					ctx.fillStyle="#ffffff";
+					ctx.fillRect(0, 0, c.width, c.height);
+					x1 = 0;
+					y1 = 0; 
+					x2 = 0;
+					y2 = 0;	
+				}
+				
+				else if (command_array[0] == "color") {
+					var user_color = command_array[1];
+					if (command_array.length > 2 || command_array.length == 1 || !(user_color in set_of_color)) {
+							textarea.value += "Incorrect usage of color, please look at help for information\n" ;
+					}
+					else {
+						textarea.value += "COLOR CHANGED TO: " + user_color + "\n";
+						color = user_color;
+					}
+				}
+				else if (command_array[0] == "thickness") {
+					var user_size = size + parseInt(command_array[1]);
+					if (command_array.length > 2 || command_array.length == 1 || user_size > 10 || user_size < 1) {
+						textarea.value += "Incorrect usage of thinkness, please look at help for information\n";
+					}
+					else {
+						textarea.value += "SIZE CHANGED TO: " + user_size + "\n";
+						size = user_size;
+					}
+				}
+				else if (command_array[0] == "forward") {
+					var steps = parseInt(command_array[1]);
+					if (command_array.length > 2 || command_array.length == 1) {
+						textarea.value += "Incorrect usage of forward, please look at help for information\n";
+					}
+					else {
+						x2 = x1;
+						x1 = x1 + steps;
+						y2 = y1;
+						ctx.beginPath();
+						ctx.strokeStyle = color;
+						ctx.lineWidth = size;
+						ctx.moveTo(x2, y2);
+						ctx.lineTo(x1, y1);
+						ctx.stroke();
+					}
+					
+				}
+				else if (command_array[0] == "back") {
+					var steps = parseInt(command_array[1]);
+					if (command_array.length > 2 || command_array.length == 1) {
+						textarea.value += "Incorrect usage of back, please look at help for information\n";
+					}
+					else {
+						x2 = x1;
+						x1 = x1 - steps;
+						y2 = y1;
+						ctx.beginPath();
+						ctx.strokeStyle = color;
+						ctx.lineWidth = size;
+						ctx.moveTo(x2, y2);
+						ctx.lineTo(x1, y1);
+						ctx.stroke();
+					}
+					
+				}
+				else if (command_array[0] == "up") {
+					var steps = parseInt(command_array[1]);
+					if (command_array.length > 2 || command_array.length == 1) {
+						textarea.value += "Incorrect usage of up, please look at help for information\n";
+					}
+					else {
+						y2 = y1;
+						y1 = y1 - steps;
+						x2 = x1;
+						ctx.beginPath();
+						ctx.strokeStyle = color;
+						ctx.lineWidth = size;
+						ctx.moveTo(x2, y2);
+						ctx.lineTo(x1, y1);
+						ctx.stroke();
+					}
+					
+				}
+				else if (command_array[0] == "down") {
+					var steps = parseInt(command_array[1]);
+					if (command_array.length > 2 || command_array.length == 1) {
+						textarea.value += "Incorrect usage of thinkness, please look at help for information\n";
+					}
+					else {
+						y2 = y1;
+						y1 = y1 + steps;
+						x2 = x1;
+						ctx.beginPath();
+						ctx.strokeStyle = color;
+						ctx.lineWidth = size;
+						ctx.moveTo(x2, y2);
+						ctx.lineTo(x1, y1);
+						ctx.stroke();
+					}
+					
+				}
+				else if (command_array[0] == "circle") {
+					var rad = parseInt(command_array[1]);
+					if (command_array.length > 2 || command_array.length == 1) {
+						textarea.value += "Incorrect usage of circle, please look at help for information\n";
+					}
+					else {
+						ctx.beginPath();
+						ctx.strokeStyle = color;
+						ctx.lineWidth = size;
+						ctx.arc(x1,y1,rad,0,2 * Math.PI);
+						ctx.stroke();
+					}
+				
+				}
+				else {
+					textarea.value += "Invalid command '" + command + "'\n";
+				}
+				
+				document.getElementById("log").scrollTop = document.getElementById("log").scrollHeight;
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+		<h1><u>Turtle shell</u></h1><br>
+		<div class = "container">
+			<div class="row">
+				<div class = "col-md-6">
+					<textarea readonly placeholder = "Command Log" id = "log" rows="25" cols="60"></textarea>
+					<br>
+					<label for = "shell">turtle> </label>
+					<input type="text" id = "shell" onkeydown = "get(this)" autofocus><br>
+				</div>
+				
+				<div class = "col-md-6">
+					<canvas width="500" height="504" style="border:2px solid #d3d3d3;" id = "myCanvas"></canvas>			
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			var c = document.getElementById("myCanvas");
+			var	ctx = c.getContext("2d");
+			ctx.fillStyle="#ffffff";
+			ctx.fillRect(0, 0, c.width, c.height);			
+		</script>
+</body>
+
+
+
+</html>

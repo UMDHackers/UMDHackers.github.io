@@ -6,28 +6,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Parth Desai</title>
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="img/favicon-fighter-jet.ico">
-		
+		<link rel="shortcut icon" href="img/favicon-linux.ico">
+	
 		<link rel="stylesheet" href="styles/Skeleton-2.0.4/css/skeleton.css">
 		<link rel="stylesheet" href="styles/Skeleton-2.0.4/css/normalize.css"> 
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-		<link rel = "stylesheet" href = "fonts/octicons/octicons.css">
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 		
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		
-		<!-- Smooth Scrolling Script -->
-		<script src="js/smooth-scroll-master/smooth-scroll-master/js/smooth-scroll.js"> </script>
 		<!-- Jquerry -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		
-			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="http://w3schools.com/w3css/w3full.css">
+
 
 		<link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 		<!--
@@ -37,7 +28,7 @@
 		-->	
 		<!-- Font-Awesome-->
 		<link rel="stylesheet" href="fonts/font-awesome-4.3.0/font-awesome-4.3.0/css/font-awesome.css">
-		<link rel="stylesheet" href="http://w3schools.com/w3css/w3full.css">
+		
 
 		<script>
 			$(document).ready(function(e) {
@@ -105,12 +96,35 @@
 				background-size: 850px 300px;
 				
 			}
-			
+			.loader {
+				position: fixed;
+				left: 0px;
+				top: 0px;
+				width: 100%;
+				height: 100%;
+				z-index: 9999;
+				background: url('img/android-dance.gif') 50% 50% no-repeat rgb(249,249,249);
+			}
+			.loader h1 {
+				position: absolute;
+				width: 100px;
+				height: 50px;
+				top: 50%;
+				left: 49%;
+				margin-left: -50px; /* margin is -0.5 * dimension */
+				margin-top: -25px;			
+				padding-top: 155px;
+				
+			}
 		</style>
-
+		<script type="text/javascript">
+			$(window).load(function() {
+				$(".loader").delay( 1340 ).fadeOut("slow");
+			});
+		</script>
 	</head>
 	<body>
-
+		<div class="loader"><h1>Loading...</h1></div>
 		<section id="about">
 		</br></br>
 		</br>

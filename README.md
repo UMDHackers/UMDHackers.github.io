@@ -1,2 +1,2 @@
 # Personal Website
-[live](http://parthgdesai.me/)
+[live](http://parthgdesai.xyz/)

@@ -1,4 +1,4 @@
-
+	
 <!DOCTYPE>
 
 <html>
@@ -7,14 +7,14 @@
 		<title>Parth Desai</title>
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="img/favicon-linux.ico">
-	
+
 		<link rel="stylesheet" href="styles/Skeleton-2.0.4/css/skeleton.css">
-		<link rel="stylesheet" href="styles/Skeleton-2.0.4/css/normalize.css"> 
-		
-		
+		<link rel="stylesheet" href="styles/Skeleton-2.0.4/css/normalize.css">
+
+
 		<!-- Jquerry -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		
+
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -25,17 +25,17 @@
 			<script type="text/javascript" src="//octicons.github.com/js/jquery-1.11.0.min.js"></script>
 			<script type="text/javascript" src="//octicons.github.com/js/ZeroClipboard.min.js"></script>
 			<script type="text/javascript" src="//octicons.github.com/js/application.js"></script>
-		-->	
+		-->
 		<!-- Font-Awesome-->
 		<link rel="stylesheet" href="fonts/font-awesome-4.3.0/font-awesome-4.3.0/css/font-awesome.css">
-		
+
 
 		<script>
 			$(document).ready(function(e) {
 				$('.with-hover-text, .regular-link').click(function(e){
 					e.stopPropagation();
 					});
-					
+
 				/***************
 				* = Hover text *
 				* Hover text for the last slide
@@ -74,8 +74,8 @@
 					}
 				);
 			});
-			
-			
+
+
 		</script>
 		<script src="js/wow.min.js"></script>
 		<link rel="stylesheet" href="styles/animate.css">
@@ -85,16 +85,16 @@
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
 		<!-- Original CSS --->
 		<link rel="stylesheet" type="text/css" href="styles/index.css">
-		
+
 		<style>
 			body {
-				font-family: Ubuntu, sans-serif; 
+				font-family: Ubuntu, sans-serif;
 				margin-top: 90px;
 				background-image: url("img/hedge-footer1.jpg");
 				background-position: bottom;
 			    background-repeat: no-repeat;
 				background-size: 850px 300px;
-				
+
 			}
 			.loader {
 				position: fixed;
@@ -112,38 +112,107 @@
 				top: 50%;
 				left: 49%;
 				margin-left: -50px; /* margin is -0.5 * dimension */
-				margin-top: -25px;			
+				margin-top: -25px;
 				padding-top: 155px;
-				
+
+			}
+			p {
+				font-size: 17px;
+				padding-left: 10px;
+			}
+			h3 {
+				font-size: 34px;
+			}
+			.underneath i {
+				padding-top: 20px;
+				font-size: 40px;
+				cursor: pointer;
+				color: black;
+			}
+			#play:hover {
+				color: gold;
+			}
+			.playingUnderneath i {
+				padding-top: 20px;
+				font-size: 40px;
+				cursor: pointer;
+				color:white;
+
+			}
+			#pause {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			#pause:hover {
+				color: gold;
+			}
+			#backward:hover {
+				color: gold;
+			}
+			#forward:hover {
+				color: gold;
+			}
+			img {
+		    border: 1px solid #021a40;
+			}
+			video {
+			    position: fixed;
+			    top: 50%;
+			    left: 50%;
+			    min-width: 100%;
+			    min-height: 100%;
+			    width: auto;
+			    height: auto;
+			    z-index: -100;
+			    transform: translateX(-50%) translateY(-50%);
+			 		/*background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;*/
+			  	background-size: cover;
+			  	transition: 1s opacity;
+			}
+			.container {
+				background-color: rgba(255,255,255, 0);
+ 				color: inherit;
 			}
 		</style>
 		<script type="text/javascript">
 			$(window).load(function() {
 				$(".loader").delay( 1340 ).fadeOut("slow");
 			});
+
 		</script>
 	</head>
 	<body>
-		<div class="loader"><h1>Loading...</h1></div>
-		<section id="about">
+		<!--<div class="loader"><h1>Loading...</h1></div>-->
+		<video autoplay loop muted id="background" class = "video">
+			<source src="img/waves_cut.mp4" type="video/mp4" id = "video_src">
+		</video>
 		</br></br>
 		</br>
 			<div class="container">
 				<div class = "row">
 					<div class = "col-md-5 img-and-social">
+
 						<img src = "img/profile_pic.jpg" class="img-circle" width="350" height="350">
+						<div class = "underneath" style="text-align:center;">
+							<i id = "play" class="fa fa-play"></i>
+						</div>
+						<div class = "playingUnderneath" style="text-align:center;">
+							<i id = "backward" class = "fa fa-backward"></i>
+							<i id = "pause" class = "fa fa-pause"></i>
+							<i id = "forward" class = "fa fa-forward forward"></i>
+						</div>
 					</div>
-					<div class = "col-md-7"> 
+					<div class = "col-md-7">
 						<h3>Welcome!</h3>
 						<p>Hi! My name is Parth Desai</p>
 						<p>I am a rising junior from the University of Maryland and I am studying computer science while minoring in Entrepreneurship. I plan on graduating in Dec 2016</p>
 						<p>I focus on web development mostly but I also have a strong knowledge of software development languages specifically in Java, Ruby, C, and Python!
 						</p>
-						<p>I have interned/worked at many cool places aswell, currently I work at the Fraunhofer Center for Experimental Software Engineering </p> 
+						<p>I have interned/worked at many cool places aswell, currently I work at the Fraunhofer Center for Experimental Software Engineering </p>
 						<p>Feel free to check out my <b><a href ="https://www.github.com/UMDHackers">Projects</a></b>, <b><a href ="etc/edited_resume.pdf">Resume</a></b> or feel free to contact me! Or even hire me!</p>
 					</div>
 				</div>
-				
+
 					</br>
 					<div class = "wow fadeInUp">
 					<div class="btn-group2 contact-row-4">
@@ -151,36 +220,83 @@
 							<p><a href = "https://www.github.com/UMDHackers" target="_blank"><i class="fa fa-github"></i></a></p>
 							<span class="hover-text">UMDHackers</span></a>
 						</div>
-						
+
 						<div class = "col-12 col-sm-2 with-hover-text">
 							<p><a href = "https://www.facebook.com/parth.desai.5" target="_blank"><i class="fa fa-facebook-square"></i></a></p>
 							<span class="hover-text">add me!</span></a>
 						</div>
-						
+
 						<div class = "col-12 col-sm-2 with-hover-text">
 							<p><a href = "https://twitter.com/Parth5Desai" target="_blank"><i class="fa fa-twitter"></i></a></p>
 							<span class="hover-text">@Parth5Desai</span></a>
 						</div>
-						
+
 						<div class = "col-12 col-sm-2 with-hover-text">
 							<p><a href = "https://www.linkedin.com/in/parthdesai95" target="_blank"><i class="fa fa-linkedin-square"></i></a></p>
 							<span class="hover-text">link me!</span></a>
 						</div>
-						
+
 						<div class = "col-12 col-sm-2 with-hover-text">
 							<p><a href = "mailto:parthdesai95@gmail.com"><i class="fa fa-envelope"></i></a></p>
 							<span class="hover-text">parthdesai95@gmail.com</span></a>
-						</div>		
+						</div>
+						<!--<div class = "col-12 col-sm- with-hover-text">
+							<p><a href = "#"><i class = "fa fa-file-text-o"></i></a></p>
+							<span class="hover-text">Papers</span></a>
+						</div> -->
 						<div class = "col-12 col-sm-2 with-hover-text">
 							<p><a href = "#"><i class="fa fa-phone"></i></a></p>
 							<span class="hover-text">240-422-2761</span></a>
-						</div>
+						</div> 
+						
 					</div>
 				</div>
-				
-			</div>	
-			
-		</section>
+			</div>
+	<script>
+	//	var array = ["img/tiger_cut.mp4", "img/matrix.mp4", "img/skate.mp4", "img/mountians.mp4", "img/waves_cut.mp4", "img/dbz.mp4"];
+		var array = ["img/tiger_cut.mp4", "img/mountians.mp4", "img/waves_cut.mp4", "img/dbz.mp4"];
+		var iter = 0;
+		var video_block = $('.video');
 
+		$(".playingUnderneath").css('display', 'none');
+		$(".video").css('display', 'none');
+		$(".video").find("#video_src").attr("src", array[0]);
+		video_block.load();
+		$("#play").click(function() {
+			$(".underneath").toggle();
+			$(".playingUnderneath").toggle();
+			$(".video").toggle();
+			$("p").css('color', 'white');
+			$("h3").css('color', 'white');
+			$(".btn-group2").css('color', 'white');
+		});
+		$("#pause").click(function() {
+			$(".underneath").toggle();
+			$(".playingUnderneath").toggle();
+			$(".video").toggle();
+			$("p").css('color', 'black');
+			$("h3").css('color', 'black');
+			$(".btn-group2").css('color', 'black');
+		});
+		$("#forward").click(function() {
+			if(iter == array.length - 1) {
+				iter = 0;
+			} else {
+				iter++;
+			}
+			$(".video").find("#video_src").attr("src", array[iter]);
+			video_block.load();
+		});
+		$("#backward").click(function() {
+			if(iter == 0) {
+				iter = array.length - 1;
+			} else {
+				iter--;
+			}
+			$(".video").find("#video_src").attr("src", array[iter]);
+			video_block.load();
+		});
+
+	</script>
 	</body>
 </html>
